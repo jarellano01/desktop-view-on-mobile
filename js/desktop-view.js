@@ -59,6 +59,5 @@ desktopViewBtn.onclick = function () {
         createCookie('viewport', 'desktop', 1);
     }
 
-    viewport = document.querySelector('meta[name=viewport]');
     setViewPort();
 };
