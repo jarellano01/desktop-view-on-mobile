@@ -2,8 +2,11 @@
 This a simple example of how to create a button that allows a desktop view on a mobile device.
 
 ## Live Demo
-(Desktop View Link will be found in the footer of this demo)
+
 https://jarellano01.github.io/tutorial_desktop-view-on-mobile/
+- Desktop View Link will be found in the footer of this demo
+- Also note that this code will only work on a mobile device or in mobile mode using chrome inspector. Desktops by default will ignore the viewport property.
+
 
 ## Usage
 - Include `desktop-view.js` in your html page
