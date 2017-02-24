@@ -1,8 +1,3 @@
-var viewportElement = document.querySelector("meta[name=viewport]");
-
-var viewport = readCookie('viewport') || 'mobile';
-
-
 //Basic Cookie Funtions
 function createCookie(name, value, days) {
     var expires = "";
@@ -29,7 +24,13 @@ function readCookie(name) {
 function eraseCookie(name) {
     createCookie(name, "", -1);
 }
+// End Cookie Functions
 
+// Create a variable to store the meta viewport tag
+var viewportElement = document.querySelector("meta[name=viewport]");
+
+// Store the cookie which tells us which mode to render in
+var viewport = readCookie('viewport') || 'mobile';
 
 // Function to set Viewport based on viewport variable which is retrieved from a cookie
 function setViewPort() {
@@ -54,9 +55,12 @@ else{
 
 desktopViewBtn.onclick = function (e) {
     e.preventDefault();
+
+    // If currently in desktop mode, delete the cookie to reset it to default
     if(viewport == 'desktop'){
         eraseCookie('viewport');
     }
+    // Else set the cookie to desktop mode
     else{
         createCookie('viewport', 'desktop', 1);
     }
