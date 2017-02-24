@@ -1,5 +1,4 @@
 var viewportElement = document.querySelector("meta[name=viewport]");
-var viewportElement = document.querySelector("meta[name=viewport]");
 
 var viewport = readCookie('viewport') || 'mobile';
 
@@ -41,7 +40,8 @@ function setViewPort() {
         viewportElement.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0');
     }
 }
-// Initially set the ViewPort
+
+// Initially set the ViewPort on page load
 setViewPort();
 
 var desktopViewBtn = document.getElementById('desktop-view');
@@ -53,6 +53,7 @@ else{
 }
 
 desktopViewBtn.onclick = function (e) {
+    e.preventDefault();
     if(viewport == 'desktop'){
         eraseCookie('viewport');
     }
@@ -60,5 +61,6 @@ desktopViewBtn.onclick = function (e) {
         createCookie('viewport', 'desktop', 1);
     }
 
-    setViewPort();
+    //reload page once viewport is saved to cookie
+    location.reload();
 };
