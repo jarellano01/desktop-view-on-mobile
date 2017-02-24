@@ -1,4 +1,5 @@
 var viewportElement = document.querySelector("meta[name=viewport]");
+var viewportElement = document.querySelector("meta[name=viewport]");
 
 var viewport = readCookie('viewport') || 'mobile';
 
@@ -51,7 +52,7 @@ else{
     desktopViewBtn.innerHTML = 'Desktop View';
 }
 
-desktopViewBtn.onclick = function () {
+desktopViewBtn.onclick = function (e) {
     if(viewport == 'desktop'){
         eraseCookie('viewport');
     }
